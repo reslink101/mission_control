@@ -37,8 +37,7 @@ npm run preview    # preview the production build locally
 
 ```
 mission-control/
-├── public/
-│   └── index.html                  # Base HTML template
+├── index.html                  # Base HTML template
 ├── src/
 │   ├── assets/                     # Static assets (images, icons)
 │   ├── hooks/
