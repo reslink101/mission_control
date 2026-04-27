@@ -37,15 +37,15 @@ npm run preview    # preview the production build locally
 
 ```
 mission-control/
-├── index.html                  # Base HTML template
+├── index.html                         # Base HTML template
 ├── src/
-│   ├── assets/                     # Static assets (images, icons)
+│   ├── assets/                        # Static assets (images, icons)
 │   ├── hooks/
-│   │   ├── useRegistryFlash.ts     # Live-data table flash animation hook
-│   │   └── useAutoScroll.ts        # Continuous auto-scroll hook
+│   │   ├── useRegistryFlash.ts        # Live-data table flash animation hook
+│   │   └── useAutoScroll.ts           # Continuous auto-scroll hook
 │   ├── data/
-│   │   ├── mockData.ts             # All mock data, builder fns, static constants
-│   │   └── mockResponses.ts        # AI bar responses (exact + keyword match)
+│   │   ├── mockData.ts                # All mock data, builder fns, static constants
+│   │   └── mockResponses.ts           # AI bar responses (exact + keyword match)
 │   ├── components/
 │   │   ├── shared/
 │   │   │   ├── IntelligenceAIBar.tsx  # Chat / AI command bar
