@@ -1,1 +1,99 @@
+/* ── Reset & base ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; overflow: hidden; font-family: 'Inter', sans-serif; }
 
+/* ── Custom scrollbars ──────────────────────────────────────── */
+::-webkit-scrollbar            { width: 5px; height: 5px; }
+::-webkit-scrollbar-track      { background: transparent; }
+::-webkit-scrollbar-thumb      { background: #cbd5e1; border-radius: 99px; }
+
+/* ── Keyframes ──────────────────────────────────────────────── */
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Screen padding ─────────────────────────────────────────── */
+.screen-main { padding: 14px 12px; }
+@media (min-width: 600px)  { .screen-main { padding: 20px 22px; } }
+@media (min-width: 900px)  { .screen-main { padding: 26px 30px; } }
+
+/* ── Page titles ────────────────────────────────────────────── */
+.page-h1 { font-size: 20px; font-weight: 800; margin: 0; letter-spacing: -0.02em; }
+@media (min-width: 600px)  { .page-h1 { font-size: 24px; } }
+@media (min-width: 900px)  { .page-h1 { font-size: 26px; } }
+
+/* ── Page header (title + controls) ────────────────────────── */
+.page-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; gap: 12px; }
+@media (max-width: 599px)  { .page-header { flex-direction: column; } }
+
+/* ── KPI / stats grid ───────────────────────────────────────── */
+.kpi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 14px; }
+@media (min-width: 600px)  { .kpi-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; } }
+
+/* ── 2-col main layout (left heavy + sidebar) ───────────────── */
+.two-col-main  { display: grid; grid-template-columns: 1fr; gap: 18px; }
+@media (min-width: 900px)  { .two-col-main  { grid-template-columns: 1fr 300px; gap: 24px; } }
+
+/* ── 2-col agent layout ─────────────────────────────────────── */
+.two-col-agent { display: grid; grid-template-columns: 1fr; gap: 18px; }
+@media (min-width: 900px)  { .two-col-agent { grid-template-columns: 1fr 360px; gap: 24px; } }
+
+/* ── Inner 2-col (charts side by side) ─────────────────────── */
+.two-col-inner { display: grid; grid-template-columns: 1fr; gap: 14px; }
+@media (min-width: 700px)  { .two-col-inner { grid-template-columns: 1fr 1fr; gap: 16px; } }
+
+/* ── 3-col grid ─────────────────────────────────────────────── */
+.three-col { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 14px; }
+@media (min-width: 600px)  { .three-col { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+@media (min-width: 900px)  { .three-col { grid-template-columns: repeat(3, 1fr); } }
+
+/* ── 4-col AI Actions ───────────────────────────────────────── */
+.four-col { display: grid; grid-template-columns: 1fr; gap: 12px; padding-bottom: 12px; align-items: start; }
+@media (min-width: 700px)  { .four-col { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+@media (min-width: 1100px) { .four-col { grid-template-columns: repeat(4, 1fr); } }
+
+/* ── Agent 3-stat grid ──────────────────────────────────────── */
+.agent-stat-3 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 14px; }
+@media (min-width: 500px)  { .agent-stat-3 { grid-template-columns: repeat(3, 1fr); } }
+
+/* ── AI bar input row ───────────────────────────────────────── */
+.ia-input-row { display: flex; align-items: center; gap: 10px; position: relative; z-index: 1; flex-wrap: wrap; }
+@media (min-width: 600px)  { .ia-input-row { flex-wrap: nowrap; gap: 16px; } }
+
+/* ── AI bar label (hide text on xs) ────────────────────────── */
+.ia-label-text { display: none; }
+@media (min-width: 480px)  { .ia-label-text { display: block; font-size: 16px; font-weight: 900; color: #f1f5f9; letter-spacing: 0.04em; } }
+
+/* ── AI bar divider ─────────────────────────────────────────── */
+.ia-divider { display: none; }
+@media (min-width: 480px)  { .ia-divider { display: block; width: 1px; height: 34px; background: linear-gradient(to bottom, transparent, #334155, transparent); flex-shrink: 0; } }
+
+/* ── Quick asks button – hide label on xs ───────────────────── */
+.ia-qa-label { display: none; }
+@media (min-width: 520px)  { .ia-qa-label { display: inline; } }
+
+/* ── Compliance row ─────────────────────────────────────────── */
+.compliance-row { display: flex; align-items: flex-start; justify-content: space-between; padding: 13px 14px; gap: 10px; flex-wrap: wrap; }
+@media (min-width: 600px)  { .compliance-row { align-items: center; padding: 13px 18px; flex-wrap: nowrap; } }
+
+/* ── Klaviyo error segment row ──────────────────────────────── */
+.kl-error-row { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+@media (min-width: 700px)  { .kl-error-row { align-items: center; } }
+
+/* ── Cross-entity header ────────────────────────────────────── */
+.pipeline-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; gap: 10px; flex-wrap: wrap; }
+
+/* ── Pipeline board scrollable ──────────────────────────────── */
+.pipeline-scroll { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 8px; }
+.pipeline-scroll::-webkit-scrollbar        { height: 5px; }
+.pipeline-scroll::-webkit-scrollbar-thumb  { background: #cbd5e1; border-radius: 99px; }
+
+/* ── Banner ─────────────────────────────────────────────────── */
+.ai-banner { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 11px 14px; margin-bottom: 16px; display: flex; align-items: flex-start; gap: 10px; flex-wrap: wrap; }
+@media (min-width: 600px)  { .ai-banner { align-items: center; flex-wrap: nowrap; padding: 11px 16px; } }
+
+/* ── Topbar title ───────────────────────────────────────────── */
+.topbar-title { font-size: 13px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: calc(100vw - 80px); }
+@media (min-width: 600px)  { .topbar-title { font-size: 14px; max-width: none; } }
+
+/* ── KPI value font ─────────────────────────────────────────── */
+.kpi-value { font-size: 18px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+@media (min-width: 600px)  { .kpi-value { font-size: 22px; } }
